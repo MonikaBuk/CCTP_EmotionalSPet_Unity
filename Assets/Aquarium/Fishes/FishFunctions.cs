@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class AddFish : MonoBehaviour
+public class FishFunctions : MonoBehaviour
 {
   public void AddNewFishTest(string fishName)
     {
