@@ -5,13 +5,26 @@ using UnityEngine;
 public class AquariumManagger : MonoBehaviour
 {
     [SerializeField] private List<FishData> fishData;
-    [SerializeField] private List<DecorationData> decorationData;
-    [SerializeField] private List<PlaceholderObject> placeHolders;
+    [SerializeField] public List<DecorationData> decorationData;
+    [SerializeField] public List<PlaceholderObject> placeHolders; 
     private static List<string> fishes = new List<string>();
     public  List<int> decoration = new List<int>();
     public GameObject baseFish;
     private const string SaveKey = "AquariumSave";
+    public static AquariumManagger Instance { get; private set; }
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+        
     void Start()
     {
         LoadFishes();
@@ -37,6 +50,15 @@ public class AquariumManagger : MonoBehaviour
         PlayerPrefs.SetString(SaveKey, json);
         PlayerPrefs.Save();
 
+    }
+
+    public void SetDecorationForAllPlaceholders(DecorationData selectedDecoration)
+    {
+        foreach (var placeholder in placeHolders)
+        {
+            placeholder.SetDecoration(selectedDecoration.itemName);
+            ///placeholder.LoadDecoration(decorationData); // Apply decoration if it's found
+        }
     }
 
 

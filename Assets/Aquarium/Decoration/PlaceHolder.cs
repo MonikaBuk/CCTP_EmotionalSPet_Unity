@@ -6,4 +6,16 @@ using UnityEngine;
 public class PlaceholderObject : MonoBehaviour
 {
     public int ID;
+    public string OwnDecorationName { get; private set; }
+
+    public void SetDecoration(string decorationName)
+    {
+        OwnDecorationName = decorationName;
+    }
+
+    public void ApplyDecoration(DecorationData decoration)
+    {
+        GetComponent<SpriteRenderer>().sprite = decoration.decorSprite;
+        OwnDecorationName = decoration.itemName;
+    }
 }

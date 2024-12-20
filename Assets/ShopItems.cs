@@ -36,4 +36,8 @@ public class ShopItems : MonoBehaviour
             }
         }
     }
+    public void RefreshShop()
+    {
+        PopulateShop();
+    }
 }

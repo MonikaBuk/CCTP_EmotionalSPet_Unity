@@ -12,6 +12,13 @@ public class PlayerStats : MonoBehaviour
     public static void AddMoney(int money)
     {
         playerMoney += money;
+
+        // Refresh the shop UI
+        var shopItems = FindObjectOfType<ShopItems>();
+        if (shopItems != null)
+        {
+            shopItems.RefreshShop();
+        }
     }
 
     public static int GetPlayerMoney()
@@ -51,5 +58,8 @@ public class PlayerStats : MonoBehaviour
     {
         return new List<DecorationData>(ownedDecorations);
     }
-
+    public static bool IsDecorationOwned(DecorationData decoration)
+    {
+        return ownedDecorations.Contains(decoration);
+    }
 }
