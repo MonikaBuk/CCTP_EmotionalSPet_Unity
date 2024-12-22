@@ -5,7 +5,8 @@ using UnityEngine;
 public class AquariumManagger : MonoBehaviour
 {
     [SerializeField] private List<FishData> fishData;
-    [SerializeField] public List<DecorationData> decorationData;
+    [SerializeField] private AllItemHolder allItemHolder;
+   // [SerializeField] public List<DecorationData> decorationData;
     [SerializeField] public List<PlaceholderObject> placeHolders; 
     private static List<string> fishes = new List<string>();
     public  List<int> decoration = new List<int>();
@@ -24,11 +25,14 @@ public class AquariumManagger : MonoBehaviour
             Instance = this;
         }
     }
-        
-    void Start()
+
+    private void Start()
     {
+     
+
         LoadFishes();
         LoadDecoration();
+       // decorationData = allItemHolder.DecorationData;
     }
 
     public static void LoadAquarium()
@@ -80,7 +84,7 @@ public class AquariumManagger : MonoBehaviour
 
     public void LoadDecoration()
     {
-        foreach (int savedData in decoration)
+       /* foreach (int savedData in decoration)
         {
             DecorationData data = decorationData.Find(decoration => decoration.placeID == savedData);
             foreach(PlaceholderObject placeHolder in placeHolders)
@@ -90,7 +94,7 @@ public class AquariumManagger : MonoBehaviour
                     placeHolder.gameObject.GetComponent<SpriteRenderer>().sprite = data.decorSprite;
                 }
             }
-        }
+        } */
     }
 
     private void OnApplicationQuit()

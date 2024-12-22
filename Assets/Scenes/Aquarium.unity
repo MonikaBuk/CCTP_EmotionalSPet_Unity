@@ -171,9 +171,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38d9d31417cb16c43b4926e314dd2244, type: 2}
   - {fileID: 11400000, guid: d5bdffba504ea89449a5b6b4056f0d62, type: 2}
   - {fileID: 11400000, guid: 6f77978683bebfb43a5be96468aceb81, type: 2}
-  decorationData:
-  - {fileID: 11400000, guid: 0f290f841808dd34d8a5ed36b45ab9dc, type: 2}
-  - {fileID: 11400000, guid: 9d2cc0f1d13fb504d8a954d8dae87c3c, type: 2}
+  allItemHolder: {fileID: 1247142323}
   placeHolders:
   - {fileID: 692713880}
   - {fileID: 1913763572}
@@ -12560,9 +12558,9 @@ SceneRoots:
   - {fileID: 1020318705}
   - {fileID: 1662753546}
   - {fileID: 1043880682}
+  - {fileID: 699495037}
   - {fileID: 607627783}
   - {fileID: 1849066131}
   - {fileID: 1213005814}
-  - {fileID: 699495037}
   - {fileID: 1998906330}
   - {fileID: 674754971}

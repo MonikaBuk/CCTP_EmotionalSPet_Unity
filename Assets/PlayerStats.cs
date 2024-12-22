@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] private static int playerMoney = 5;
+    private static int playerMoney = 5;
+
     private static List<DecorationData> ownedDecorations = new List<DecorationData>();
 
 
