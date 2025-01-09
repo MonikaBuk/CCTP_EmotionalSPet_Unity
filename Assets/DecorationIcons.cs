@@ -36,6 +36,8 @@ public class DecorationIcons : MonoBehaviour
                 if (placeholder.ID == myDecData.placeID)
                 {
                     placeholder.ApplyDecoration(myDecData);
+                    AquariumManagger.Instance.SetDecorationForPlaceholder(placeholder.ID, myDecData);
+
                 }
             }
         }

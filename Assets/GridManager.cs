@@ -5,23 +5,23 @@ using UnityEngine.UI;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private AllItemHolder allItemHolder;
     [SerializeField] private Transform gridContainer;
     public GameObject gridItemPrefab;
     private void Start()
     {
         PopulateGrid();
+        
     }
 
     public void PopulateGrid()
     {
-        if (allItemHolder == null || allItemHolder.DecorationData == null)
+        if (AllItemHolder.instance == null || AllItemHolder.instance.DecorationData == null)
         {
             Debug.LogError("AllItemHolder or DecorationData list is not set.");
             return;
         }
         Dictionary<int, List<DecorationData>> groupedItems = new Dictionary<int, List<DecorationData>>();
-        foreach (var decoration in allItemHolder.DecorationData)
+        foreach (var decoration in AllItemHolder.instance.DecorationData)
         {
             if (!groupedItems.ContainsKey(decoration.placeID))
             {

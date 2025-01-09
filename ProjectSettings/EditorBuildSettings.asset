@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PetScene.unity
     guid: 55da518b0d875c24fbf92ff783f34633
   - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 474815df95e1d3f49b5d346b2a0ca40b
+  - enabled: 1
     path: Assets/Scenes/Aquarium.unity
     guid: 508b7ff36dcc1614f9294d74649fff5a
   m_configObjects:

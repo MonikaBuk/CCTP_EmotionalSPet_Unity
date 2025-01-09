@@ -15,7 +15,10 @@ public class PlaceholderObject : MonoBehaviour
 
     public void ApplyDecoration(DecorationData decoration)
     {
-        GetComponent<SpriteRenderer>().sprite = decoration.decorSprite;
-        OwnDecorationName = decoration.itemName;
+        if (decoration != null)
+        {
+            GetComponent<SpriteRenderer>().sprite = decoration.decorSprite;
+            OwnDecorationName = decoration.itemName;
+        }
     }
 }
