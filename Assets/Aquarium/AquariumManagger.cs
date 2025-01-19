@@ -183,6 +183,7 @@ public class AquariumManagger : MonoBehaviour
             FishData data = fishData.Find(fish => fish.fishName.Equals(savedData));
             GameObject newFish = Instantiate(baseFish, this.transform);
             newFish.GetComponent<SpriteRenderer>().sprite = data.fishSprite;
+            newFish.transform.localScale = baseFish.transform.localScale;
         }
     }
 

@@ -5,6 +5,7 @@ using System;
 
 public class PetStats : MonoBehaviour
 {
+    public static PetStats Instance { get; private set; }
     private int maxStat = 100;
 
     public float statDecreaseRate = 0.1f;
@@ -17,6 +18,8 @@ public class PetStats : MonoBehaviour
     private float dirtyness;
     private float boredom;
 
+    public static bool wasFed;
+
 
     private DateTime lastFedTime;
     private DateTime lastCleanTime;
@@ -28,11 +31,21 @@ public class PetStats : MonoBehaviour
     [SerializeField] StatBar cleanBar;
     [SerializeField] StatBar playBar;
 
+
     void Start()
     {
         myAnimManager = GetComponent<AnimationManager>();
         LoadData();
         InvokeRepeating("Calculate", 0f, 1f);
+    }
+
+    private void Update()
+    {
+        if (wasFed)
+        {
+            FeedPet();
+            wasFed = false;
+        }
     }
 
 
@@ -153,7 +166,4 @@ public class PetStats : MonoBehaviour
     {
         return hunger < 50; 
     }
-
-
-
 }

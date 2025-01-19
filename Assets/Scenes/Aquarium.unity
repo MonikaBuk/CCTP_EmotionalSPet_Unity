@@ -176,7 +176,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 38d9d31417cb16c43b4926e314dd2244, type: 2}
   - {fileID: 11400000, guid: d5bdffba504ea89449a5b6b4056f0d62, type: 2}
   - {fileID: 11400000, guid: 6f77978683bebfb43a5be96468aceb81, type: 2}
-  allItemHolder: {fileID: 0}
   placeHolders:
   - {fileID: 692713880}
   - {fileID: 1913763572}
@@ -6844,7 +6843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1067fc1c18ec30240a9536a0f8725f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allItemHolder: {fileID: 0}
   gridContainer: {fileID: 1766019175}
   gridItemPrefab: {fileID: 8238590368244451971, guid: 85199b73a7033d544a8adfcfd0638804, type: 3}
 --- !u!114 &1766019178

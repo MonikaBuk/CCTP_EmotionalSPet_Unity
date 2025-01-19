@@ -21,6 +21,11 @@ public class FishFunctions : MonoBehaviour
         AquariumManagger.LoadAquarium();
     }
 
+    public void DeleteAllPref()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void LoadNextScene()
     {
         SceneManager.LoadScene(1);

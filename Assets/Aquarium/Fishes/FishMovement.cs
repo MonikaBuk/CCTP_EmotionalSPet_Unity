@@ -67,13 +67,15 @@ public class FishMovement : MonoBehaviour
 
     void RotateFish()
     {
+        Vector3 currentScale = transform.localScale;
+
         if (swimDirection == 1)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
         }
         else
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
         }
     }
 }
