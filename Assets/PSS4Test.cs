@@ -12,8 +12,10 @@ public class PSS4Test : MonoBehaviour
     public ToggleGroup question3Group;
     public ToggleGroup question4Group;
     public TMP_Text warningText;
+    public TMP_Text scoreText;
+    public GameObject scorePanel;
 
-    // Method to calculate score
+
     public void CalculateScore()
     {
         int score = 0;
@@ -28,6 +30,10 @@ public class PSS4Test : MonoBehaviour
         {
             warningText.gameObject.SetActive(false);
         }
+        scorePanel.gameObject.SetActive(true);
+        scoreText.text = "PSS-4 Total Score: " + score;
+
+
     }
 
     public void OnDone()
