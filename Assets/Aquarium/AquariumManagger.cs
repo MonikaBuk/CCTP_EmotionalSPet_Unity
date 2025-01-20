@@ -186,7 +186,7 @@ public class AquariumManagger : MonoBehaviour
             newFish.transform.localScale = baseFish.transform.localScale;
         }
     }
-
+    
     public void LoadDecoration()
     {
         foreach (var placeholder in placeHolders)

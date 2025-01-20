@@ -24,6 +24,8 @@ public class FishFunctions : MonoBehaviour
     public void DeleteAllPref()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save(); // Ensure changes are written to disk
+        Debug.Log("All PlayerPrefs have been cleared.");
     }
 
     public void LoadNextScene()

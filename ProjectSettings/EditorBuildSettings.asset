@@ -21,17 +21,23 @@ EditorBuildSettings:
     path: Assets/Scenes/Cockpit/CockpitScene.unity
     guid: b78a0ca5d851e4ddf993dcc6feab56d0
   - enabled: 1
+    path: Assets/Scenes/PSS4Test.unity
+    guid: 14a7f27318117484b86cc3ed142982e6
+  - enabled: 1
     path: Assets/Scenes/PetScene.unity
     guid: 55da518b0d875c24fbf92ff783f34633
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: 474815df95e1d3f49b5d346b2a0ca40b
   - enabled: 1
+    path: Assets/Scenes/Aquarium.unity
+    guid: 508b7ff36dcc1614f9294d74649fff5a
+  - enabled: 1
     path: Assets/Scenes/FeedingGame.unity
     guid: 61b95ded27587d4449725f2e40ded726
   - enabled: 1
-    path: Assets/Scenes/Aquarium.unity
-    guid: 508b7ff36dcc1614f9294d74649fff5a
+    path: Assets/Scenes/BreathingScene.unity
+    guid: dd3a64eab1e3d0941be7ea8fda63c3d0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 290a6e6411d135049940bec2237b8938, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
