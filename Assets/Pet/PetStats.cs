@@ -90,6 +90,7 @@ public class PetStats : MonoBehaviour
         lastFedTime = DateTime.Now;
         myAnimManager.SetAnimationId(5);
         StartCoroutine(RevertToBasicAnimation());
+        PlayerPrefs.SetString("LastFedTime", lastFedTime.ToString());
     }
     public void CleanPet()
     {

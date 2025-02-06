@@ -33,7 +33,7 @@ public class AquariumManagger : MonoBehaviour
     private void Start()
     {
 
-        LoadFishes();
+      
         LoadDecoration();
         if (decorationsInScene.Count != placeHolders.Count)
         {
@@ -53,8 +53,9 @@ public class AquariumManagger : MonoBehaviour
 
             }
         }
+        LoadFishes();
 
-       // decorationData = allItemHolder.DecorationData;
+        // decorationData = allItemHolder.DecorationData;
     }
 
     public static void LoadAquarium()
