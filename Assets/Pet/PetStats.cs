@@ -18,7 +18,10 @@ public class PetStats : MonoBehaviour
     private float dirtyness;
     private float boredom;
 
-    public static bool wasFed;
+    public static bool wasFed = false;
+    public static bool wasCleaned = false;
+    public static bool wasPlayed = false;
+
 
 
     private DateTime lastFedTime;
@@ -31,6 +34,7 @@ public class PetStats : MonoBehaviour
     [SerializeField] StatBar cleanBar;
     [SerializeField] StatBar playBar;
 
+    [SerializeField] private Material material;
 
     void Start()
     {
@@ -45,6 +49,12 @@ public class PetStats : MonoBehaviour
         {
             FeedPet();
             wasFed = false;
+        }
+        if (wasCleaned)
+        {
+            CleanPet();
+            wasCleaned = false;
+
         }
     }
 
@@ -65,6 +75,11 @@ public class PetStats : MonoBehaviour
         dirtyness = Mathf.Clamp(dirtyness, 0, maxStat);
         cleaness = maxStat - (int)dirtyness;
         cleanBar.UpdateStatBar(cleaness);
+
+        float clean = dirtyness / 100.0f;
+        Debug.Log(clean);
+      
+       material.SetFloat("_Dirtiness", clean);
     }
 
     void CalculateJoyness(DateTime currentTime)
@@ -98,6 +113,8 @@ public class PetStats : MonoBehaviour
         lastCleanTime = DateTime.Now;
         myAnimManager.SetAnimationId(7);
         StartCoroutine(RevertToBasicAnimation());
+        material.SetFloat("_Dirtiness", 0);
+        PlayerPrefs.SetString("LastCleanTime", lastCleanTime.ToString());
     }
     public void PlayWithnPet()
     {

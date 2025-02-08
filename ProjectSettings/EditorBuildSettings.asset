@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FeedingGame.unity
     guid: 61b95ded27587d4449725f2e40ded726
   - enabled: 1
+    path: Assets/Scenes/GroomScene.unity
+    guid: 0b43e53cfdfffc245b9e60f68c29b82b
+  - enabled: 1
     path: Assets/Scenes/BreathingScene.unity
     guid: dd3a64eab1e3d0941be7ea8fda63c3d0
   m_configObjects:

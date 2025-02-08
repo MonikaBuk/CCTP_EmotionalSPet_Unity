@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 public class Cleaning : MonoBehaviour
@@ -38,6 +39,11 @@ public class Cleaning : MonoBehaviour
         }
         dirtAmount = dirtAmountTotal;
         StartCoroutine(UpdateDirtPercentageCoroutine());
+    }
+
+    private void Start()
+    {
+        uiText.text = " 0% Clean";
     }
 
     void Update()
@@ -111,7 +117,9 @@ public class Cleaning : MonoBehaviour
             {
                 uiText.text = "Well done";
                 material.SetFloat("_Dirtiness", 0);
-                PetStats.Instance.CleanPet();
+                PetStats.wasCleaned = true;
+                PlayerStats.AddMoney(5);
+                SceneManager.LoadScene("PetScene");
             }
             else
             {
