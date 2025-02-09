@@ -9,6 +9,9 @@ TagManager:
   - ScreenCamera
   - cockpit_capitalLaser
   - Food
+  - Obstalce
+  - Obstacle
+  - WinZone
   layers:
   - Default
   - TransparentFX
