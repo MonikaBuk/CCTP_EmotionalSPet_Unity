@@ -56,6 +56,11 @@ public class PetStats : MonoBehaviour
             wasCleaned = false;
 
         }
+        if (wasPlayed)
+        {
+            PlayWithnPet();
+            wasPlayed = false;
+        }
     }
 
 
@@ -122,6 +127,8 @@ public class PetStats : MonoBehaviour
         lastPlayTime = DateTime.Now;
         myAnimManager.SetAnimationId(3);
         StartCoroutine(RevertToBasicAnimation());
+        PlayerPrefs.SetString("LastPlayTime", lastPlayTime.ToString());
+
     }
     public void SaveData()
     {

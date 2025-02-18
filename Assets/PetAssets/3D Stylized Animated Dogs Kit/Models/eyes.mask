@@ -8,4 +8,426 @@ AvatarMask:
   m_PrefabAsset: {fileID: 0}
   m_Name: eyes
   m_Mask: 00000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  m_Elements: []
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: german_gamerig
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_index.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_index.01.L/DEF-r_index.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_index.01.L/DEF-r_index.02.L/DEF-r_index.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_middle.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_middle.01.L/DEF-r_middle.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_middle.01.L/DEF-r_middle.02.L/DEF-r_middle.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_palm.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_palm.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_palm.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_palm.04.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_pinky.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_pinky.01.L/DEF-r_pinky.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_pinky.01.L/DEF-r_pinky.02.L/DEF-r_pinky.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_ring.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_ring.01.L/DEF-r_ring.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.L/DEF-thigh.L/DEF-thigh.L.001/DEF-shin.L/DEF-shin.L.001/DEF-foot.L/DEF-foot.L.001/DEF-toe.L/DEF-r_ring.01.L/DEF-r_ring.02.L/DEF-r_ring.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_index.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_index.01.R/DEF-r_index.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_index.01.R/DEF-r_index.02.R/DEF-r_index.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_middle.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_middle.01.R/DEF-r_middle.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_middle.01.R/DEF-r_middle.02.R/DEF-r_middle.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_palm.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_palm.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_palm.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_palm.04.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_pinky.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_pinky.01.R/DEF-r_pinky.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_pinky.01.R/DEF-r_pinky.02.R/DEF-r_pinky.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_ring.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_ring.01.R/DEF-r_ring.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-pelvis.R/DEF-thigh.R/DEF-thigh.R.001/DEF-shin.R/DEF-shin.R.001/DEF-foot.R/DEF-foot.R.001/DEF-toe.R/DEF-r_ring.01.R/DEF-r_ring.02.R/DEF-r_ring.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.003/DEF-spine.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.003/DEF-spine.002/DEF-spine.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.003/DEF-spine.002/DEF-spine.001/DEF-spine
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-breast.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-breast.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_index.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_index.01.L/DEF-f_index.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_index.01.L/DEF-f_index.02.L/DEF-f_index.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_middle.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_middle.01.L/DEF-f_middle.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_middle.01.L/DEF-f_middle.02.L/DEF-f_middle.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_palm.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_palm.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_palm.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_palm.04.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_pinky.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_pinky.01.L/DEF-f_pinky.02.L/DEF-f_pinky.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_ring.01.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_ring.01.L/DEF-f_ring.02.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.L/DEF-front_thigh.L/DEF-front_thigh.L.001/DEF-front_shin.L/DEF-front_shin.L.001/DEF-front_foot.L/DEF-front_foot.L.001/DEF-front_toe.L/DEF-f_ring.01.L/DEF-f_ring.02.L/DEF-f_ring.03.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_index.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_index.01.R/DEF-f_index.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_index.01.R/DEF-f_index.02.R/DEF-f_index.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_middle.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_middle.01.R/DEF-f_middle.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_middle.01.R/DEF-f_middle.02.R/DEF-f_middle.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_palm.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_palm.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_palm.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_palm.04.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_pinky.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_pinky.01.R/DEF-f_pinky.02.R/DEF-f_pinky.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_ring.01.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_ring.01.R/DEF-f_ring.02.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-shoulder.R/DEF-front_thigh.R/DEF-front_thigh.R.001/DEF-front_shin.R/DEF-front_shin.R.001/DEF-front_foot.R/DEF-front_foot.R.001/DEF-front_toe.R/DEF-f_ring.01.R/DEF-f_ring.02.R/DEF-f_ring.03.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.L.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.L.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.L.004
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.R.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.R.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.B.R.004
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.L.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.L.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.R.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-brow.T.R.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.B.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.B.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.B.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.B.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.T.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.T.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.T.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-cheek.T.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-chin
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-chin.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-chin.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-chin.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.L.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.L.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.L.004
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.R.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.R.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-ear.R.004
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-eye.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-eye.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-eye_iris.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-eye_iris.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-eye_master.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-eye_master.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-forehead.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-forehead.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-forehead.L.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-forehead.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-forehead.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-forehead.R.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-jaw
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-jaw.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-jaw.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-jaw.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-jaw.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-jaw_master
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.L
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.L.001
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.L.002
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.L.003
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.R
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.R.001
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.R.002
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.B.R.003
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.L
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.L.001
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.L.002
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.L.003
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.R
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.R.001
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.R.002
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lid.T.R.003
+    m_Weight: 1
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.B.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.B.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.B.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.B.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.T.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.T.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.T.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-lip.T.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.002
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.003
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.004
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.L.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-nose.R.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-teeth.B
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-teeth.T
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-temple.L
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-temple.R
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-tongue
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-tongue.001
+    m_Weight: 0
+  - m_Path: german_gamerig/DEF-spine.004/DEF-spine.005/DEF-spine.006/DEF-spine.007/DEF-spine.008/DEF-spine.009/DEF-spine.010/DEF-spine.011/DEF-tongue.002
+    m_Weight: 0
+  - m_Path: germansheperd.ready
+    m_Weight: 0

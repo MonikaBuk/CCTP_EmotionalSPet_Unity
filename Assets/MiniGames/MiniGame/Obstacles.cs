@@ -9,14 +9,12 @@ public class Obstacles : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            Debug.Log("Game Over!");
-            PetStats.wasCleaned = true;
+            PetStats.wasPlayed = true;
             SceneManager.LoadScene("PetScene");
         }
         else if (other.CompareTag("WinZone"))
         {
-            Debug.Log("Game Over!");
-            PetStats.wasCleaned = true;
+            PetStats.wasPlayed = true;
             PlayerStats.AddMoney(5);
             SceneManager.LoadScene("PetScene");
         }
