@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using static UnityEngine.InputSystem.UI.VirtualMouseInput;
 
 
 public class Cleaning : MonoBehaviour
@@ -12,11 +13,14 @@ public class Cleaning : MonoBehaviour
     [SerializeField] private Texture2D dirtBrush;
     [SerializeField] private Material material;
     [SerializeField] private TextMeshProUGUI uiText;
+    [SerializeField] private Texture2D cursorImage;
 
     private Texture2D dirtMaskTexture;
     private float dirtAmountTotal;
     private float dirtAmount;
     private Vector2Int lastPaintPixelPosition;
+    public UnityEngine.CursorMode cursorMode = UnityEngine.CursorMode.Auto;
+    public Vector2 hotSpot = Vector2.zero;
 
     private void Awake()
     {
@@ -44,15 +48,19 @@ public class Cleaning : MonoBehaviour
     private void Start()
     {
         uiText.text = " 0% Clean";
+        Cursor.SetCursor(cursorImage, hotSpot, cursorMode);
     }
 
     void Update()
     {
+        int brushSize = 100; // Increase this for a bigger brush
+        float scaleFactor = brushSize / (float)dirtBrush.width;
+
         if (Mouse.current.leftButton.isPressed)
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red); 
+            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
@@ -63,26 +71,43 @@ public class Cleaning : MonoBehaviour
                 Vector2Int paintPixelPosition = new Vector2Int(pixelX, pixelY);
                 int paintPixelDistance = Mathf.Abs(paintPixelPosition.x - lastPaintPixelPosition.x) +
                                          Mathf.Abs(paintPixelPosition.y - lastPaintPixelPosition.y);
-                int maxPaintDistance = 40;
+                int maxPaintDistance = 7;
 
                 if (paintPixelDistance < maxPaintDistance)
                     return;
 
                 lastPaintPixelPosition = paintPixelPosition;
 
-                // Paint Square in Dirt Mask
-                int squareSize = 200;
-                int pixelXOffset = pixelX - (dirtBrush.width / 2);
-                int pixelYOffset = pixelY - (dirtBrush.height / 2);
+                int pixelXOffset = pixelX - (brushSize / 2);
+                int pixelYOffset = pixelY - (brushSize / 2);
 
-                for (int x = 0; x < squareSize; x++)
+                for (int x = 0; x < brushSize; x++)
                 {
-                    for (int y = 0; y < squareSize; y++)
+                    for (int y = 0; y < brushSize; y++)
                     {
+                        int brushX = (int)(x / scaleFactor);
+                        int brushY = (int)(y / scaleFactor);
+
+                        if (brushX < 0 || brushX >= dirtBrush.width || brushY < 0 || brushY >= dirtBrush.height)
+                            continue;
+
+                        float distance = Vector2.Distance(new Vector2(x, y), new Vector2(brushSize / 2, brushSize / 2));
+                        if (distance > brushSize / 2) continue;
+                        float falloff = 1 - (distance / (brushSize / 2)); 
+
+                        Color pixelDirt = dirtBrush.GetPixel(brushX, brushY);
+                        int pixelPosX = Mathf.Clamp(pixelXOffset + x, 0, dirtMaskTexture.width - 1);
+                        int pixelPosY = Mathf.Clamp(pixelYOffset + y, 0, dirtMaskTexture.height - 1);
+
+                        Color pixelDirtMask = dirtMaskTexture.GetPixel(pixelPosX, pixelPosY);
+
+                        float removedAmount = pixelDirtMask.g - (pixelDirtMask.g * pixelDirt.g * falloff);
+                        dirtAmount -= removedAmount;
+
                         dirtMaskTexture.SetPixel(
-                            pixelXOffset + x,
-                            pixelYOffset + y,
-                            Color.black
+                            pixelPosX,
+                            pixelPosY,
+                            new Color(0, pixelDirtMask.g * pixelDirt.g * falloff, 0)
                         );
                     }
                 }
@@ -91,6 +116,7 @@ public class Cleaning : MonoBehaviour
             }
         }
     }
+
 
 
 
@@ -109,7 +135,7 @@ public class Cleaning : MonoBehaviour
             }
 
             float cleanPercentage = 1f - (currentDirtAmount / dirtAmountTotal);
-            int precentage = Mathf.RoundToInt(cleanPercentage * 2.3f * 100f);
+            int precentage = Mathf.RoundToInt(cleanPercentage * 4f * 100f);
 
            
 
@@ -119,6 +145,7 @@ public class Cleaning : MonoBehaviour
                 material.SetFloat("_Dirtiness", 0);
                 PetStats.wasCleaned = true;
                 PlayerStats.AddMoney(5);
+                ChangeBackCursor();
                 SceneManager.LoadScene("PetScene");
             }
             else
@@ -131,6 +158,11 @@ public class Cleaning : MonoBehaviour
     private void OnDestroy()
     {
         StopCoroutine(UpdateDirtPercentageCoroutine());
+    }
+    public void ChangeBackCursor()
+    {
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+
     }
 }
 

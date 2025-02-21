@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/SharedAssets/Benchmark/BenchmarkScene.unity
+    path: Assets/Terrain/SharedAssets/Benchmark/BenchmarkScene.unity
     guid: d1335b3b949d2e646b481776723757a2
   - enabled: 0
     path: Assets/Scenes/Terminal/TerminalScene.unity

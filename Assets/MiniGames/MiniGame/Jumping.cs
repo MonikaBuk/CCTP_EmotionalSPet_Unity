@@ -9,11 +9,18 @@ public class Jumping : MonoBehaviour
     public float gravity = -9.8f;       
     private bool isGrounded = true;     
     private float verticalVelocity = 0;
+    private AudioSource jumpSound;
+
+    private void Start()
+    {
+        jumpSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
+            jumpSound.Play();
             verticalVelocity = jumpForce;
             isGrounded = false;
         }

@@ -49,17 +49,20 @@ public class PetStats : MonoBehaviour
         {
             FeedPet();
             wasFed = false;
+            StartCoroutine(ResetAnimationAfterDelay(2.0f));
         }
         if (wasCleaned)
         {
             CleanPet();
             wasCleaned = false;
+            StartCoroutine(ResetAnimationAfterDelay(2.0f));
 
         }
         if (wasPlayed)
         {
             PlayWithnPet();
             wasPlayed = false;
+            StartCoroutine(ResetAnimationAfterDelay(2.0f));
         }
     }
 
@@ -109,7 +112,6 @@ public class PetStats : MonoBehaviour
         hunger = 0;
         lastFedTime = DateTime.Now;
         myAnimManager.SetAnimationId(5);
-        StartCoroutine(RevertToBasicAnimation());
         PlayerPrefs.SetString("LastFedTime", lastFedTime.ToString());
     }
     public void CleanPet()
@@ -117,7 +119,6 @@ public class PetStats : MonoBehaviour
         dirtyness = 0;
         lastCleanTime = DateTime.Now;
         myAnimManager.SetAnimationId(7);
-        StartCoroutine(RevertToBasicAnimation());
         material.SetFloat("_Dirtiness", 0);
         PlayerPrefs.SetString("LastCleanTime", lastCleanTime.ToString());
     }
@@ -126,7 +127,6 @@ public class PetStats : MonoBehaviour
         boredom = 0;
         lastPlayTime = DateTime.Now;
         myAnimManager.SetAnimationId(3);
-        StartCoroutine(RevertToBasicAnimation());
         PlayerPrefs.SetString("LastPlayTime", lastPlayTime.ToString());
 
     }
@@ -167,28 +167,18 @@ public class PetStats : MonoBehaviour
         }
     }
 
+    private IEnumerator ResetAnimationAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        myAnimManager.SetAnimationId(0); 
+    }
+
     void OnApplicationQuit()
     {
         SaveData();
     }
 
-    private IEnumerator RevertToBasicAnimation()
-    {
-  
-        yield return new WaitForSeconds(5f);
+   
 
-        if (IsPetHappy())
-        {
-            myAnimManager.SetAnimationId(1); 
-        }
-        else
-        {
-            myAnimManager.SetAnimationId(0);
-        }
-    }
 
-    private bool IsPetHappy()
-    {
-        return hunger < 50; 
-    }
 }
