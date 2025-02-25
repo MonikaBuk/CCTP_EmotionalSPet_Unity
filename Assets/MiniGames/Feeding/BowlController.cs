@@ -10,7 +10,13 @@ public class BowlController : MonoBehaviour
     public float speed = 10.0f;
     private float score = 0;
     public TMP_Text scoreText;
- 
+    private AudioSource m_audioSource;
+
+    private void Start()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
@@ -25,17 +31,28 @@ public class BowlController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
-            Debug.Log("Food collected!");
-            Destroy(other.gameObject);
-            score++;
-            scoreText.text = score.ToString();
-            if (score >= 10)
+            FoodMovement food = other.GetComponent<FoodMovement>();
+
+            if (food.isHealthy)
             {
-                score = 0;
-                PetStats.wasFed = true;
-                PlayerStats.AddMoney(5);
-                SceneManager.LoadScene("PetScene");
+                Destroy(other.gameObject);
+                score++;
+                scoreText.text = score.ToString();
+                m_audioSource.pitch = 1.0f;
+                if (score >= 10)
+                {
+                    score = 0;
+                    PetStats.wasFed = true;
+                    PlayerStats.AddMoney(5);
+                    SceneManager.LoadScene("PetScene");
+                }
             }
+            else
+            {
+                m_audioSource.pitch = 0.6f;
+            }
+            m_audioSource.Play();
+
         }
     }
 }

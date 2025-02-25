@@ -22,6 +22,11 @@ public class Bubble : MonoBehaviour
     public TMP_Text instructions;
     private bool textSet = false;
 
+    public AudioClip blowingSound;
+    public AudioClip popSound;
+
+    private AudioSource m_audioSource;
+
 
     void Start()
     {
@@ -34,6 +39,7 @@ public class Bubble : MonoBehaviour
         endPosition = startPosition + Vector3.up * riseHeight;
         startScale = transform.localScale;
         bubbleAnimator = GetComponent<Animator>();
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +52,8 @@ public class Bubble : MonoBehaviour
                 {
                     instructions.text = "INHALE";
                     textSet = true;
+                    m_audioSource.clip = blowingSound;
+                    m_audioSource.Play();
                 }
                 timer += Time.deltaTime / riseDuration;
                 transform.position = Vector3.Lerp(startPosition, endPosition, timer);
@@ -55,6 +63,7 @@ public class Bubble : MonoBehaviour
             {
                 if (holdTimer == 0f) 
                 {
+                    m_audioSource.Stop();
                     instructions.text = "HOLD";
                 }
 
@@ -64,6 +73,7 @@ public class Bubble : MonoBehaviour
                 {
                     instructions.text = "EXHALE";
                     PopBubble();
+                    StartCoroutine(StopPopSound(2.0f));
                     holdingAtTop = true;
                 }
             }
@@ -75,6 +85,8 @@ public class Bubble : MonoBehaviour
         if (bubbleAnimator != null)
         {
             bubbleAnimator.SetTrigger("Pop");
+            m_audioSource.clip = popSound;
+            m_audioSource.Play();
         }
         else
         {
@@ -89,6 +101,11 @@ public class Bubble : MonoBehaviour
     {
         Debug.Log("Pop method called at: " + Time.time);
         DestroyBubble();
+    }
+    private IEnumerator StopPopSound(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        m_audioSource.Stop();
     }
 }
 

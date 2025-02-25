@@ -23,7 +23,7 @@ public class FoodSpawner : MonoBehaviour
     void SpawnFood()
     {
         float randomX = Random.Range(screenLeft + 1, screenRight - 1);
-        Vector3 spawnPosition = new Vector3(randomX, spawnY, 0);
+        Vector3 spawnPosition = new Vector3(randomX, spawnY, -1);
         int randomIndex = Random.Range(0, foodPrefabs.Length);
         Instantiate(foodPrefabs[randomIndex], spawnPosition, Quaternion.identity);
     }

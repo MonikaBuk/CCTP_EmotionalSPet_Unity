@@ -21,6 +21,7 @@ public class Cleaning : MonoBehaviour
     private Vector2Int lastPaintPixelPosition;
     public UnityEngine.CursorMode cursorMode = UnityEngine.CursorMode.Auto;
     public Vector2 hotSpot = Vector2.zero;
+    private AudioSource brushAudioSource;
 
     private void Awake()
     {
@@ -48,6 +49,7 @@ public class Cleaning : MonoBehaviour
     private void Start()
     {
         uiText.text = " 0% Clean";
+        brushAudioSource = GetComponent<AudioSource>();
         Cursor.SetCursor(cursorImage, hotSpot, cursorMode);
     }
 
@@ -58,12 +60,17 @@ public class Cleaning : MonoBehaviour
 
         if (Mouse.current.leftButton.isPressed)
         {
+
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
+                if (!brushAudioSource.isPlaying)
+                {
+                    brushAudioSource.Play();
+                }
                 Vector2 textureCoord = raycastHit.textureCoord;
                 int pixelX = (int)(textureCoord.x * dirtMaskTexture.width);
                 int pixelY = (int)(textureCoord.y * dirtMaskTexture.height);
@@ -93,7 +100,7 @@ public class Cleaning : MonoBehaviour
 
                         float distance = Vector2.Distance(new Vector2(x, y), new Vector2(brushSize / 2, brushSize / 2));
                         if (distance > brushSize / 2) continue;
-                        float falloff = 1 - (distance / (brushSize / 2)); 
+                        float falloff = 1 - (distance / (brushSize / 2));
 
                         Color pixelDirt = dirtBrush.GetPixel(brushX, brushY);
                         int pixelPosX = Mathf.Clamp(pixelXOffset + x, 0, dirtMaskTexture.width - 1);
@@ -112,10 +119,23 @@ public class Cleaning : MonoBehaviour
                     }
                 }
 
+
                 dirtMaskTexture.Apply();
             }
+            else
+            {
+                if (brushAudioSource.isPlaying)
+                    brushAudioSource.Stop();
+            }
+        }
+        else
+        {
+           
+            if (brushAudioSource.isPlaying)
+                brushAudioSource.Stop();
         }
     }
+    
 
 
 

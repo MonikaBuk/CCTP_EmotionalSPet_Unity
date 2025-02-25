@@ -5,35 +5,39 @@ using UnityEngine.InputSystem;
 
 public class PetClickHandler : MonoBehaviour
 {
- 
-        private AnimationManager animationManager;
 
-        void Start()
-        {
-            animationManager = GetComponent<AnimationManager>();
-        }
+    private AnimationManager animationManager;
+    private AudioSource m_audioSource;
 
-        void Update()
+    void Start()
+    {
+        animationManager = GetComponent<AnimationManager>();
+        m_audioSource = GetComponent<AudioSource>();
+    }
+
+    void Update()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-                if (Physics.Raycast(ray, out RaycastHit hit))
-                {
                 Debug.Log("hit");
-                    if (hit.collider.gameObject == gameObject)
-                    {
-                    animationManager.SetAnimationId(1); 
-                        StartCoroutine(ResetAnimationAfterDelay(4.0f)); 
-                    }
+                if (hit.collider.gameObject == gameObject)
+                {
+                    m_audioSource.Play();
+                    animationManager.SetAnimationId(1);
+                    StartCoroutine(ResetAnimationAfterDelay(4.0f));
                 }
             }
         }
-
-        IEnumerator ResetAnimationAfterDelay(float delay)
-        {
-            yield return new WaitForSeconds(delay);
-            animationManager.SetAnimationId(0); 
-        }
     }
+
+    IEnumerator ResetAnimationAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        m_audioSource.Stop();
+        animationManager.SetAnimationId(0);
+    }
+}
 

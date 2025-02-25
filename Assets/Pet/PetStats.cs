@@ -22,6 +22,9 @@ public class PetStats : MonoBehaviour
     public static bool wasCleaned = false;
     public static bool wasPlayed = false;
 
+    public GameObject food;
+    public GameObject toy;
+
 
 
     private DateTime lastFedTime;
@@ -41,6 +44,8 @@ public class PetStats : MonoBehaviour
         myAnimManager = GetComponent<AnimationManager>();
         LoadData();
         InvokeRepeating("Calculate", 0f, 1f);
+        toy.SetActive(false);
+        food.SetActive(false);
     }
 
     private void Update()
@@ -49,6 +54,7 @@ public class PetStats : MonoBehaviour
         {
             FeedPet();
             wasFed = false;
+            StartCoroutine(ShowAndHideGameObject(food, 2.0f));
             StartCoroutine(ResetAnimationAfterDelay(2.0f));
         }
         if (wasCleaned)
@@ -62,6 +68,7 @@ public class PetStats : MonoBehaviour
         {
             PlayWithnPet();
             wasPlayed = false;
+            StartCoroutine(ShowAndHideGameObject(toy, 2.0f));
             StartCoroutine(ResetAnimationAfterDelay(2.0f));
         }
     }
@@ -171,6 +178,12 @@ public class PetStats : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         myAnimManager.SetAnimationId(0); 
+    }
+    private IEnumerator ShowAndHideGameObject(GameObject obj, float delay)
+    {
+        obj.SetActive(true);  
+        yield return new WaitForSeconds(delay);
+        obj.SetActive(false);
     }
 
     void OnApplicationQuit()
