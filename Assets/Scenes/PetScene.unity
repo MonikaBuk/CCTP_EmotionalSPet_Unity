@@ -3789,9 +3789,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2002389208}
-        m_TargetAssemblyTypeName: MoneyTest, Assembly-CSharp
-        m_MethodName: QuitApp
+      - m_Target: {fileID: 2000694471}
+        m_TargetAssemblyTypeName: CustomSceneLoader, Assembly-CSharp
+        m_MethodName: OnQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

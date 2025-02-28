@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeID: 1
   cost: 5
-  decorSprite: {fileID: 21300000, guid: 23c7ffff87b9ad644bcb153bd39681d0, type: 3}
+  decorSprite: {fileID: -1420152905, guid: b79c532278562224ebb9d58b4c57c891, type: 3}
   itemName: Grey Rock

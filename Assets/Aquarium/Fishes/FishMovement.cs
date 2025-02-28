@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+
 
 public class FishMovement : MonoBehaviour
 {
@@ -18,6 +20,13 @@ public class FishMovement : MonoBehaviour
     private float cameraWidth;
     private float cameraHeight;
 
+    public float speedBoostMultiplier = 2f; // Multiplier for speed boost
+    public float speedBoostDuration = 2f;   // How long the boost lasts
+    private float speedBoostEndTime = 0f;
+    private bool isBoosted = false;
+    private float originalSpeed;
+
+
     void Start()
     {
         swimDirection = Random.value > 0.5f ? 1 : -1;
@@ -28,9 +37,20 @@ public class FishMovement : MonoBehaviour
         Random.Range(-cameraWidth, cameraWidth),
         Random.Range(-cameraHeight, cameraHeight), 0);
         transform.position = newSpawnPoint;
+        originalSpeed = swimSpeed;
     }
         void Update()
     {
+        if (isBoosted && Time.time > speedBoostEndTime)
+        {
+            swimSpeed = originalSpeed; 
+            isBoosted = false;
+        }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            OnClick();
+        }
         MoveFish();
         ApplyVerticalMotion();
 
@@ -78,6 +98,33 @@ public class FishMovement : MonoBehaviour
             transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);
         }
     }
+    public void OnClick()
+    {
+        Vector2 mousePosition = Mouse.current.position.ReadValue();
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+       
+        RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            ApplySpeedBoost();
+        }
+
+        Debug.Log("Fish clicked! Speed increased.");
+    }
+
+    void ApplySpeedBoost()
+    {
+        if (!isBoosted)
+        {
+            swimSpeed *= speedBoostMultiplier;
+            speedBoostEndTime = Time.time + speedBoostDuration;
+            isBoosted = true;
+            ChangeDirection();
+        }
+    }
+
 }
 
 

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeID: 3
   cost: 5
-  decorSprite: {fileID: 21300000, guid: 6cdbe4c671908b84799ee59454e81947, type: 3}
+  decorSprite: {fileID: 1958564287, guid: b79c532278562224ebb9d58b4c57c891, type: 3}
   itemName: Yellow Spikes

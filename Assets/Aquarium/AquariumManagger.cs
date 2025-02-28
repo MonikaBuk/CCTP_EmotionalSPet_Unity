@@ -14,6 +14,8 @@ public class AquariumManagger : MonoBehaviour
     private const string SaveKey = "AquariumSave";
     public static AquariumManagger Instance { get; private set; }
 
+    public Camera cam;
+
     private static Dictionary<int, DecorationData> decorationsInScene = new Dictionary<int, DecorationData>();
 
     private void Awake()
@@ -185,6 +187,16 @@ public class AquariumManagger : MonoBehaviour
             GameObject newFish = Instantiate(baseFish, this.transform);
             newFish.GetComponent<SpriteRenderer>().sprite = data.fishSprite;
             newFish.transform.localScale = baseFish.transform.localScale;
+        }
+        if (fishes.Count > 10)
+        {
+            cam.orthographicSize = 4;
+
+        }
+        if (fishes.Count > 20)
+        {
+            cam.orthographicSize = 5;
+
         }
     }
     
