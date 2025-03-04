@@ -12,6 +12,7 @@ TagManager:
   - Obstalce
   - Obstacle
   - WinZone
+  - FishText
   layers:
   - Default
   - TransparentFX

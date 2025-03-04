@@ -64,7 +64,7 @@ public class GridManager : MonoBehaviour
                 RectTransform gridItemRect = gridItem.GetComponent<RectTransform>();
                 if (gridItemRect != null)
                 {
-                    gridItemRect.sizeDelta = new Vector2(100, 100);  
+                    gridItemRect.sizeDelta = new Vector2(150, 150);  
                 }
             }   
         }

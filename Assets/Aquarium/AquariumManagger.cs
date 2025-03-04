@@ -17,6 +17,7 @@ public class AquariumManagger : MonoBehaviour
     public Camera cam;
 
     private static Dictionary<int, DecorationData> decorationsInScene = new Dictionary<int, DecorationData>();
+    private const string JournalSaveKey = "JournalEntries";
 
     private void Awake()
     {
@@ -35,7 +36,6 @@ public class AquariumManagger : MonoBehaviour
     private void Start()
     {
 
-      
         LoadDecoration();
         if (decorationsInScene.Count != placeHolders.Count)
         {
@@ -56,11 +56,85 @@ public class AquariumManagger : MonoBehaviour
             }
         }
         LoadFishes();
+        LoadJournalData();
+
 
         // decorationData = allItemHolder.DecorationData;
     }
+    public void SaveJournalData(Dictionary<string, Dictionary<string, DailyFishReward>> journalEntries)
+    {
+        // Convert dictionary to a list of JournalEntry
+        List<JournalEntry> journalList = new List<JournalEntry>();
+        foreach (var dailyEntry in journalEntries)
+        {
+            JournalEntry journalEntry = new JournalEntry { key = dailyEntry.Key };
 
-    public static void LoadAquarium()
+            foreach (var activity in dailyEntry.Value)
+            {
+                ActivityEntry activityEntry = new ActivityEntry
+                {
+                    key = activity.Key,
+                    fishReward = activity.Value
+                };
+                journalEntry.activities.Add(activityEntry);
+            }
+
+            journalList.Add(journalEntry);
+        }
+
+        // Save the data
+        JournalSaveData saveData = new JournalSaveData { journalEntries = journalList };
+        string json = JsonUtility.ToJson(saveData);
+        Debug.Log("to save: " + json);
+        PlayerPrefs.SetString(JournalSaveKey, json);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadJournalData()
+    {
+        if (!PlayerPrefs.HasKey(JournalSaveKey)) return;
+
+        string json = PlayerPrefs.GetString(JournalSaveKey);
+        Debug.Log("load fish: " + json);
+
+        // Load data
+        JournalSaveData loadedData = JsonUtility.FromJson<JournalSaveData>(json);
+
+        // Rebuild the original dictionary
+        Dictionary<string, Dictionary<string, DailyFishReward>> journalEntries = new Dictionary<string, Dictionary<string, DailyFishReward>>();
+        foreach (var journalEntry in loadedData.journalEntries)
+        {
+            Dictionary<string, DailyFishReward> dailyDictionary = new Dictionary<string, DailyFishReward>();
+            foreach (var activity in journalEntry.activities)
+            {
+                dailyDictionary[activity.key] = activity.fishReward;
+            }
+            journalEntries[journalEntry.key] = dailyDictionary;
+        }
+
+        // Initialize Journal Manager with loaded data
+        JournalManager.Instance.Initialize(journalEntries);
+
+        // Spawn all saved fish
+        foreach (var dailyEntry in journalEntries)
+        {
+            foreach (var activity in dailyEntry.Value)
+            {
+                SpawnFish(activity.Value.fishID, activity.Value.dateTime, activity.Value.reason);
+            }
+        }
+    }
+
+    public void SpawnFish(int fishID, string asd, string test)
+    {
+        Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-3, 3), UnityEngine.Random.Range(-3, 3), 0);
+        GameObject newFish = Instantiate(baseFish, randomPos, Quaternion.identity);
+        FishComponent fish = newFish.GetComponent<FishComponent>();
+        fish.Initialize(fishID, asd, test);
+       // newFish.GetComponent<FishComponent>().fishID = fishID;
+    }
+
+public static void LoadAquarium()
     {
         string json = PlayerPrefs.GetString(SaveKey);
         Debug.Log($"Loading aquarium data: {json}");  // Debug log to check the raw JSON string
@@ -109,13 +183,13 @@ public class AquariumManagger : MonoBehaviour
                                 else
                                 {
                                     Debug.LogWarning($"Decoration not found for name: {entry.DecorationName}");
-                                    decorationsInScene[entry.ID] = null;  // Set to null if decoration is not found
+                                    decorationsInScene[entry.ID] = null;  
                                 }
                             }
                         }
                         else
                         {
-                            decorationsInScene[entry.ID] = null;  // Handle case where DecorationName is empty or null
+                            decorationsInScene[entry.ID] = null;  
                             Debug.LogWarning($"DecorationName is empty or null for ID: {entry.ID}");
                         }
                     }
