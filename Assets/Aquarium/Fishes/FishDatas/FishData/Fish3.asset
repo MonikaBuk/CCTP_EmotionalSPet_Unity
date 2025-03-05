@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b77cc65cda1ff8439aadc62c8b6b5e2, type: 3}
   m_Name: Fish3
   m_EditorClassIdentifier: 
-  fishName: 3day
-  fishSprite: {fileID: -1500607179, guid: b79c532278562224ebb9d58b4c57c891, type: 3}
+  fishName: 3
+  fishSprite: {fileID: 1108793315, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}

@@ -110,8 +110,6 @@ public class FishMovement : MonoBehaviour
         {
             ApplySpeedBoost();
         }
-
-        Debug.Log("Fish clicked! Speed increased.");
     }
 
     void ApplySpeedBoost()

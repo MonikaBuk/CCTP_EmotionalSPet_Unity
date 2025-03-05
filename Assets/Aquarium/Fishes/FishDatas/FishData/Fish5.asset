@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d57447433525af4394a847b0354d9ab, type: 3}
-  m_Name: Blue Spikes
+  m_Script: {fileID: 11500000, guid: 0b77cc65cda1ff8439aadc62c8b6b5e2, type: 3}
+  m_Name: Fish5
   m_EditorClassIdentifier: 
-  placeID: 3
-  cost: 5
-  decorSprite: {fileID: -1139006813, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
-  itemName: Plant
+  fishName: 5
+  fishSprite: {fileID: -351920525, guid: 241277f31c60e914c9921cbe1b42d0ec, type: 3}

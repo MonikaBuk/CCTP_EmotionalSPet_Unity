@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeID: 2
   cost: 10
-  decorSprite: {fileID: -1447693369, guid: b79c532278562224ebb9d58b4c57c891, type: 3}
-  itemName: Purple Grass
+  decorSprite: {fileID: -180671382, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
+  itemName: Pink Coral

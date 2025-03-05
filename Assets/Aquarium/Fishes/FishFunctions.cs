@@ -6,11 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class FishFunctions : MonoBehaviour
 {
-  public void AddNewFishTest(string fishName)
-    {
-        AquariumManagger.AddNewFish(fishName);
-    }
-
+  
     public void SaveAquarium()
     {
         AquariumManagger.SaveAquarium();

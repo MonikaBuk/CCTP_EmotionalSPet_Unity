@@ -99,7 +99,6 @@ public class Bubble : MonoBehaviour
     }
     public void Pop()
     {
-        Debug.Log("Pop method called at: " + Time.time);
         DestroyBubble();
     }
     private IEnumerator StopPopSound(float delay)

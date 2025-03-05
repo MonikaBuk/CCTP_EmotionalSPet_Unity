@@ -3,11 +3,14 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reflection;
 
 public class JournalManager : MonoBehaviour
 {
     public static JournalManager Instance { get; private set; }
-    private Dictionary<string, Dictionary<string, DailyFishReward>> journalEntries = new Dictionary<string, Dictionary<string, DailyFishReward>>();
+    private Dictionary<string, Dictionary<string, ActivityEntry>> journalEntries  = new Dictionary<string, Dictionary<string, ActivityEntry>>();
+    static public bool newBreathingFish = false;
 
     private void Awake()
     {
@@ -19,52 +22,74 @@ public class JournalManager : MonoBehaviour
         Instance = this;
     }
 
-    public void Initialize(Dictionary<string, Dictionary<string, DailyFishReward>> loadedEntries)
+    private void Update()
     {
-        journalEntries = loadedEntries ?? new Dictionary<string, Dictionary<string, DailyFishReward>>();
+       if (newBreathingFish)
+        {
+            AddBreathingExerciseReward();
+            newBreathingFish = false;
+        }
     }
 
-    public void AddJournalEntry(string reason)
+    public void Initialize(Dictionary<string, Dictionary<string, ActivityEntry>> loadedEntries)
     {
-        AddFishReward("Journal", reason);
+        journalEntries = loadedEntries ?? new Dictionary<string, Dictionary<string, ActivityEntry>>();
+    }
+
+
+    public void AddJournalEntry(JournalEntryType entryType, string reason)
+    {
+        string entryTypeString = EnumHelper.GetEnumDescription(entryType); 
+        AddFishReward((int)entryType, "Journal", $"{entryTypeString}: {reason}");
     }
 
     public void AddBreathingExerciseReward()
     {
-        AddFishReward("BreathingExercise", "Completed breathing exercise");
+        Debug.Log("Adding Breathing Exercise Reward"); 
+        AddFishReward(5, "BreathingExercise", "Completed breathing exercise");
     }
 
-    private void AddFishReward(string activityType, string reason)
+
+    private void AddFishReward(int id, string activityType, string reason)
     {
         string today = DateTime.Now.ToString("yyyy-MM-dd");
         string timeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
+        Debug.Log($"Adding fish reward for {activityType} on {today}");
+
+        // Initialize today's journal entry if necessary
         if (!journalEntries.ContainsKey(today))
         {
-            journalEntries[today] = new Dictionary<string, DailyFishReward>();
+            journalEntries[today] = new Dictionary<string, ActivityEntry>();
+            Debug.Log($"Created new entry for {today}");
         }
 
+        // Initialize the activity type if necessary
         if (!journalEntries[today].ContainsKey(activityType))
         {
-            int fishID = UnityEngine.Random.Range(0, 3); // Pick a random fish
-            journalEntries[today][activityType] = new DailyFishReward(fishID, reason, timeStamp);
+            journalEntries[today][activityType] = new ActivityEntry { key = activityType };
+            Debug.Log($"Created new activity type {activityType} for {today}");
+        }
 
+        // Generate a random fish ID and add it to the activity
+        int fishID = id;
+        journalEntries[today][activityType].fishRewards.Add(new DailyFishReward(fishID, reason, timeStamp));
+        Debug.Log($"Added fish reward: ID={fishID}, Reason={reason}, Timestamp={timeStamp}");
+
+        // Save the updated journal data
+        if (AquariumManagger.Instance != null)
+        {
+            Debug.Log("Saving journal data...");
             AquariumManagger.Instance.SaveJournalData(journalEntries);
         }
         else
         {
-            Debug.Log($"You already received a fish for {activityType} today!");
+            Debug.LogError("AquariumManagger instance is null!");
         }
     }
 
-    public DailyFishReward GetJournalEntry(string date, string activityType)
-    {
-        return journalEntries.ContainsKey(date) && journalEntries[date].ContainsKey(activityType)
-            ? journalEntries[date][activityType]
-            : null;
-    }
 
-    public Dictionary<string, Dictionary<string, DailyFishReward>> GetJournalData()
+    public Dictionary<string, Dictionary<string, ActivityEntry>> GetJournalData()
     {
         return journalEntries;
     }
@@ -102,5 +127,36 @@ public class JournalEntry
 public class ActivityEntry
 {
     public string key;
-    public DailyFishReward fishReward;
+    public List<DailyFishReward> fishRewards = new List<DailyFishReward>();
+}
+
+
+
+public enum JournalEntryType
+{
+    [Description("Today made me smile")]
+    TodayMadeMeSmile = 0,
+
+    [Description("I am grateful for")]
+    IAmGratefulFor = 1,
+
+    [Description("I am looking forward to")]
+    IAmLookingForwardTo = 2,
+
+    [Description("My biggest achievement today")]
+    MyBiggestAchievementToday = 3,
+
+    [Description("Something new I learned")]
+    SomethingNewILearned = 4
+}
+
+public static class EnumHelper
+{
+    public static string GetEnumDescription(Enum value)
+    {
+        FieldInfo fi = value.GetType().GetField(value.ToString());
+        DescriptionAttribute[] attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+        return attributes.Length > 0 ? attributes[0].Description : value.ToString();
+    }
 }

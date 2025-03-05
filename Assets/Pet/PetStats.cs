@@ -92,8 +92,7 @@ public class PetStats : MonoBehaviour
         cleanBar.UpdateStatBar(cleaness);
 
         float clean = dirtyness / 100.0f;
-        Debug.Log(clean);
-      
+       
        material.SetFloat("_Dirtiness", clean);
     }
 

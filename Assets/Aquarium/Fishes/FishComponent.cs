@@ -41,7 +41,7 @@ public class FishComponent : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            achievementTextManager.ActivateText("On " + acvhievedDate + " you were grateful for " +  entry + ".");
+            achievementTextManager.ActivateText(entry + " " + acvhievedDate + ".");
         }
     }
 }

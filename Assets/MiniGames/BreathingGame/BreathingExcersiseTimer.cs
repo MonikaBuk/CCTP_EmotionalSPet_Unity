@@ -33,7 +33,7 @@ public class BreathingExcersiseTimer : MonoBehaviour
 
     void timerEnded()
     {
-        AquariumManagger.AddNewFish("1day");
+        JournalManager.newBreathingFish = true;
         sceneLoader.LoadSceneAsync("PetScene");
     }
 }
