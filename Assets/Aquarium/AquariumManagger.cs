@@ -51,14 +51,12 @@ public class AquariumManagger : MonoBehaviour
 
             }
         }
-        //LoadFishes();
         LoadJournalData();
 
 
     }
     public void SaveJournalData(Dictionary<string, Dictionary<string, ActivityEntry>> journalEntries)
     {
-        // Create a container class that will hold the dictionary as lists
         JournalSaveData saveData = new JournalSaveData();
 
         foreach (var dailyEntry in journalEntries)
@@ -75,11 +73,7 @@ public class AquariumManagger : MonoBehaviour
 
             saveData.journalEntries.Add(journalEntry);
         }
-
-        // Convert to JSON
         string json = JsonUtility.ToJson(saveData);
-
-        // Save the JSON string in PlayerPrefs
         PlayerPrefs.SetString(JournalSaveKey, json);
         PlayerPrefs.Save();
 
@@ -97,8 +91,6 @@ public class AquariumManagger : MonoBehaviour
         JournalSaveData loadedData = JsonUtility.FromJson<JournalSaveData>(json);
 
         var journalEntries = new Dictionary<string, Dictionary<string, ActivityEntry>>();
-
-       
         foreach (var journalEntry in loadedData.journalEntries)
         {
             var dailyDictionary = new Dictionary<string, ActivityEntry>();
@@ -112,7 +104,7 @@ public class AquariumManagger : MonoBehaviour
         }
 
         JournalManager.Instance.Initialize(journalEntries);
-
+         float fishCounter = 0;
         foreach (var dailyEntry in journalEntries)
         {
             foreach (var activity in dailyEntry.Value.Values)
@@ -122,9 +114,29 @@ public class AquariumManagger : MonoBehaviour
                     {
                         Debug.Log("Fish ID to spawn: " + fishReward.reason);
                     SpawnFish(fishReward.fishID, fishReward.dateTime, fishReward.reason);
+                    fishCounter++;
                 }
+
             }
         }
+        Debug.Log("count is " + fishCounter);
+        if (fishCounter < 10)
+        {
+            cam.orthographicSize = 3;
+        }
+        else if (fishCounter < 20)
+        {
+            cam.orthographicSize = 3.5f;
+        }
+        else if (fishCounter < 30)
+        {
+            cam.orthographicSize = 4;
+        }
+        else
+        {
+            cam.orthographicSize = 4.5f;
+        }
+
     }
     public void SpawnFish(int fishID, string dateTime, string reason)
     {
@@ -134,7 +146,6 @@ public class AquariumManagger : MonoBehaviour
         fishComponent.Initialize(fishID, dateTime, reason);
         SpriteRenderer spriteRenderer = newFish.GetComponent<SpriteRenderer>();
 
-        // Ensure the SpriteRenderer exists
         if (spriteRenderer != null)
         {
             if (fishID >= 0 && fishID < fishData.Count)
@@ -145,7 +156,6 @@ public class AquariumManagger : MonoBehaviour
             {
                 Debug.LogError($"Invalid fishID: {fishID}. It must be between 0 and {fishData.Count - 1}.");
             }
-            // Set the sprite based on the fishID from your fishData collection
         }
         else
         {

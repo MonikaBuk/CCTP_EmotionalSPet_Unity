@@ -1069,6 +1069,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3cd0bbbf48a64b443accdd51ad161535, type: 3}
+    - target: {fileID: 4172379551719202787, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172379551719202787, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172379551719202787, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.83137256
+      objectReference: {fileID: 0}
     - target: {fileID: 5969870210079398203, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 5
@@ -1771,7 +1783,7 @@ MonoBehaviour:
   - {fileID: 1138289605737382054, guid: 7cb587b9bae5c294bb3bc21dd7a338b0, type: 3}
   - {fileID: 1138289605737382054, guid: 2e28f7c5f9f6a7541aef3300d80efcd8, type: 3}
   - {fileID: 1138289605737382054, guid: a48f98f075f099340aae624361912500, type: 3}
-  spawnInterval: 1
+  spawnInterval: 0.5
 --- !u!4 &2139877876
 Transform:
   m_ObjectHideFlags: 0

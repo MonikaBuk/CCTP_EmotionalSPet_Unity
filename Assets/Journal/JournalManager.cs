@@ -71,7 +71,6 @@ public class JournalManager : MonoBehaviour
             Debug.Log($"Created new activity type {activityType} for {today}");
         }
 
-        // Generate a random fish ID and add it to the activity
         int fishID = id;
         journalEntries[today][activityType].fishRewards.Add(new DailyFishReward(fishID, reason, timeStamp));
         Debug.Log($"Added fish reward: ID={fishID}, Reason={reason}, Timestamp={timeStamp}");

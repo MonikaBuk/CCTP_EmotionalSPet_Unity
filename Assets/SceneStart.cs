@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class SceneStart : MonoBehaviour
 {
     public GameObject UI;
-    void Start()
+    void Awake()
     {
         Time.timeScale = 0;
         UI.SetActive(true);
