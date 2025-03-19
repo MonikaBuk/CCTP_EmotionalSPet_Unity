@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,7 +11,8 @@ public class FishMovement : MonoBehaviour
 {
     public float swimSpeed = 3f;
     public float verticalMotionRange = 0.2f;
-    public float directionChangeTime = 2f;
+    public float minDirectionChangeTime = 2f; 
+    public float maxDirectionChangeTime = 4f;
     public float rotationSpeed = 5f;
 
     private float timeSinceLastDirectionChange = 0f;
@@ -25,6 +27,10 @@ public class FishMovement : MonoBehaviour
     private float speedBoostEndTime = 0f;
     private bool isBoosted = false;
     private float originalSpeed;
+    private float startY;
+    private float directionChangeTime;
+    private float verticalSpeed;
+    private float phaseOffset;
 
 
     void Start()
@@ -38,6 +44,16 @@ public class FishMovement : MonoBehaviour
         Random.Range(-cameraHeight, cameraHeight), 0);
         transform.position = newSpawnPoint;
         originalSpeed = swimSpeed;
+        float spawnX = Mathf.Clamp(Random.Range(-cameraWidth, cameraWidth), -cameraWidth + 0.5f, cameraWidth - 0.5f);
+        float spawnY = Mathf.Clamp(Random.Range(-cameraHeight, cameraHeight), -cameraHeight - 5f, cameraHeight + 0.5f);
+
+        transform.position = new Vector3(spawnX, spawnY, 0);
+        startY = transform.position.y;
+        directionChangeTime = Random.Range(minDirectionChangeTime, maxDirectionChangeTime);
+        startY = transform.position.y;
+
+        verticalSpeed = Random.Range(1.5f, 3f);
+        phaseOffset = Random.Range(0f, Mathf.PI * 2f);
     }
         void Update()
     {
@@ -66,23 +82,29 @@ public class FishMovement : MonoBehaviour
     void MoveFish()
     {
         transform.position += new Vector3(swimDirection * swimSpeed * Time.deltaTime, 0, 0);
-        if (transform.position.x > cameraWidth || transform.position.x < -cameraWidth)
+
+        if (transform.position.x + 0.5f  >= cameraWidth || transform.position.x - 0.5f <= -cameraWidth )
         {
             ChangeDirection();
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -cameraWidth, cameraWidth), transform.position.y, transform.position.z);
         }
     }
 
     void ApplyVerticalMotion()
     {
-        float verticalMotion = Mathf.Sin(Time.time) * verticalMotionRange;
-        float newYPosition = transform.position.y + verticalMotion;
-        newYPosition = Mathf.Clamp(newYPosition, -cameraHeight, cameraHeight);
+        float verticalMotion = Mathf.Sin(Time.time * verticalSpeed + phaseOffset) * verticalMotionRange;
+        float newYPosition = startY + verticalMotion;
+
+        newYPosition = Mathf.Clamp(newYPosition, -cameraHeight + 2f, cameraHeight - 0.5f);
+
         transform.position = new Vector3(transform.position.x, newYPosition, transform.position.z);
     }
 
     void ChangeDirection()
     {
         swimDirection = -swimDirection;
+        transform.position += new Vector3(swimDirection * 0.1f, 0, 0);
+        directionChangeTime = Random.Range(minDirectionChangeTime, maxDirectionChangeTime);
     }
 
     void RotateFish()
