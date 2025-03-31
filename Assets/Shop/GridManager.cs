@@ -20,53 +20,27 @@ public class GridManager : MonoBehaviour
             Debug.LogError("AllItemHolder or DecorationData list is not set.");
             return;
         }
-        Dictionary<int, List<DecorationData>> groupedItems = new Dictionary<int, List<DecorationData>>();
-        foreach (var decoration in AllItemHolder.instance.DecorationData)
-        {
-            if (!groupedItems.ContainsKey(decoration.placeID))
-            {
-                groupedItems[decoration.placeID] = new List<DecorationData>();
-            }
-            groupedItems[decoration.placeID].Add(decoration);
-        }
+
+        // Clear existing items
         foreach (Transform child in gridContainer)
         {
             Destroy(child.gameObject);
         }
-        foreach (var group in groupedItems)
+
+        // Populate grid with all decoration items
+        foreach (var item in AllItemHolder.instance.DecorationData)
         {
-            GameObject rowContainer = new GameObject($"Row_{group.Key}");
-            rowContainer.transform.SetParent(gridContainer);
+            GameObject gridItem = Instantiate(gridItemPrefab, gridContainer);
 
-            HorizontalLayoutGroup rowLayoutGroup = rowContainer.AddComponent<HorizontalLayoutGroup>();
-            rowLayoutGroup.childAlignment = TextAnchor.UpperLeft; 
-            rowLayoutGroup.spacing = 10;  
-            rowLayoutGroup.childScaleHeight = true;
-            rowLayoutGroup.childScaleWidth = true;
-            rowLayoutGroup.childControlHeight = false;
-            rowLayoutGroup.childControlWidth = false;
-            rowLayoutGroup.childForceExpandHeight = false;
-            rowLayoutGroup.childForceExpandWidth = false;
-
-            foreach (var item in group.Value)
+            var icon = gridItem.GetComponent<DecorationIcons>();
+            if (icon != null)
             {
-                GameObject gridItem = Instantiate(gridItemPrefab, rowContainer.transform);
- 
-                var icon = gridItem.GetComponent<DecorationIcons>();
-                if (icon != null)
-                {
-                    icon.SetUpIcon(item); 
-                }
-                else
-                {
-                    Debug.LogWarning("DecorationIcons component missing on grid item prefab.");
-                }
-                RectTransform gridItemRect = gridItem.GetComponent<RectTransform>();
-                if (gridItemRect != null)
-                {
-                    gridItemRect.sizeDelta = new Vector2(150, 150);  
-                }
-            }   
+                icon.SetUpIcon(item);
+            }
+            else
+            {
+                Debug.LogWarning("DecorationIcons component missing on grid item prefab.");
+            }
         }
     }
 }

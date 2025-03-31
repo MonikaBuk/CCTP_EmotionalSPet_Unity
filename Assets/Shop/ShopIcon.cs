@@ -10,6 +10,7 @@ public class ShopIcon : MonoBehaviour
     [SerializeField] private TMP_Text itemName;
     [SerializeField] private TMP_Text itemCost;
     [SerializeField] private Image bckPanel;
+    [SerializeField] private TMP_Text itemLimit;
 
     private Button myButton;
 
@@ -63,19 +64,24 @@ public class ShopIcon : MonoBehaviour
     {
         if (myDecData == null) return;
 
-        if (PlayerStats.IsDecorationOwned(myDecData))
+        int ownedAmount = PlayerStats.GetOwnedDecorationCount(myDecData);
+        int maxAmount = myDecData.maxItemNum;
+        int remaining = maxAmount - ownedAmount;
+        itemLimit.text = remaining > 0 ? $"Left: {remaining}" : "Max Reached";
+        if (remaining <= 0)
         {
             bckPanel.color = Color.grey;
             myButton.interactable = false;
         }
         else if (myDecData.cost <= PlayerStats.GetPlayerMoney())
         {
-            bckPanel.color = myDecData.cost <= PlayerStats.GetPlayerMoney() ? Color.green : Color.red;
+            bckPanel.color = Color.green;
             myButton.interactable = true;
         }
         else
         {
             bckPanel.color = Color.red;
+            myButton.interactable = false;
         }
     }
 

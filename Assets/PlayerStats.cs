@@ -6,7 +6,14 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     private static int playerMoney = 20;
-    private static List<DecorationData> ownedDecorations = new List<DecorationData>();
+    public static Dictionary<DecorationData, int> ownedDecorations = new Dictionary<DecorationData, int>();
+    public static bool decDataChanged;
+
+    public static Dictionary<DecorationData, int> GetOwnedDecorations()
+    {
+        return ownedDecorations;
+    }
+
 
     public static void AddMoney(int money)
     {
@@ -31,37 +38,61 @@ public class PlayerStats : MonoBehaviour
             return false;
         }
 
-        if (ownedDecorations.Contains(decoration))
+        if (ownedDecorations.ContainsKey(decoration) && ownedDecorations[decoration] >= decoration.maxItemNum)
         {
-            Debug.Log($"Player already owns {decoration.itemName}.");
-        }
-        else
-        {
-            ownedDecorations.Add(decoration);
+            Debug.Log($"Cannot buy more than {decoration.maxItemNum} of {decoration.itemName}.");
+            return false;
         }
 
+        if (ownedDecorations.ContainsKey(decoration))
+            ownedDecorations[decoration]++;
+        else
+            ownedDecorations[decoration] = 1;
+
         DecreaseMoney(decoration.cost);
-        Debug.Log($"Bought {decoration.itemName}");
+        Debug.Log($"Bought {decoration.itemName}. Now owns: {ownedDecorations[decoration]}");
         return true;
     }
 
-    public static List<DecorationData> GetOwnedDecorations()
+    public static int GetOwnedDecorationCount(DecorationData decoration)
     {
-        return ownedDecorations;
+        return ownedDecorations.ContainsKey(decoration) ? ownedDecorations[decoration] : 0;
     }
 
     public static bool IsDecorationOwned(DecorationData decoration)
     {
-        return ownedDecorations.Contains(decoration);
+        return ownedDecorations.ContainsKey(decoration) && ownedDecorations[decoration] > 0;
+    }
+    public static bool UseDecoration(DecorationData decoration)
+    {
+        if (ownedDecorations.ContainsKey(decoration) && ownedDecorations[decoration] > 0)
+        {
+            ownedDecorations[decoration]--;
+            return true;
+        }
+        return false;
+    }
+    public static void RemoveDecoration(DecorationData decoration)
+    {
+       /* if (ownedDecorations.ContainsKey(decoration))
+        {
+            ownedDecorations[decoration]++;
+
+            if (ownedDecorations[decoration] <= 0)
+            {
+                ownedDecorations.Remove(decoration);
+            }
+        }
+       */
     }
 
-    // Save data for PlayerStats
     public static PlayerData GetPlayerData()
     {
         return new PlayerData
         {
             playerMoney = playerMoney,
-            ownedDecorationNames = ownedDecorations.Select(d => d.itemName).ToList()
+            ownedDecorationNames = ownedDecorations.Keys.Select(d => d.itemName).ToList(),
+            ownedDecorationCounts = ownedDecorations.Values.ToList()
         };
     }
 
@@ -71,26 +102,31 @@ public class PlayerStats : MonoBehaviour
         if (data != null)
         {
             playerMoney = data.playerMoney;
+            ownedDecorations = new Dictionary<DecorationData, int>();
 
-            // Convert saved decoration names back to ScriptableObject references
-            ownedDecorations = AllItemHolder.GetDecorationsByNames(data.ownedDecorationNames);
+            List<DecorationData> decorations = AllItemHolder.GetDecorationsByNames(data.ownedDecorationNames);
 
-            // Log the loaded decorations
-    
-            foreach (var decoration in ownedDecorations)
+            for (int i = 0; i < decorations.Count; i++)
             {
-                Debug.Log($"Decoration: {decoration.itemName}");
+                ownedDecorations[decorations[i]] = data.ownedDecorationCounts[i];
             }
 
-            Debug.Log($"Number of Owned Decorations: {ownedDecorations.Count}");
+            Debug.Log($"Loaded {ownedDecorations.Count} owned decorations.");
         }
     }
+    public static int CountDecorationsInScene(DecorationData data)
+    {
+        Decoration[] allDecorations = GameObject.FindObjectsOfType<Decoration>();
+        return allDecorations.Count(d => d.data == data);
+    }
+
 
 }
 
 
-    public class PlayerData
+public class PlayerData
 {
-    public int playerMoney; // Player's current amount of money
-    public List<string> ownedDecorationNames; // List of owned decoration names (unique identifiers)
+    public int playerMoney; 
+    public List<string> ownedDecorationNames;   
+    public List<int> ownedDecorationCounts;     
 }

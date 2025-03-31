@@ -2267,9 +2267,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MoneyTest, Assembly-CSharp
-        m_MethodName: QuitApp
+      - m_Target: {fileID: 1716073515}
+        m_TargetAssemblyTypeName: CustomSceneLoader, Assembly-CSharp
+        m_MethodName: OnQuit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2292,7 +2292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.495283, b: 0.495283, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2421,6 +2421,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3cd0bbbf48a64b443accdd51ad161535, type: 3}
+    - target: {fileID: 4172379551719202787, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
+      propertyPath: m_Color.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172379551719202787, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
+      propertyPath: m_Color.g
+      value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172379551719202787, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
+      propertyPath: m_Color.r
+      value: 0.83137256
+      objectReference: {fileID: 0}
     - target: {fileID: 5969870210079398203, guid: 3d89ae4e3e42c8d4bb27e6bd1b151d26, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -7064,12 +7076,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4361001716731169766}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.49290422, y: 0.5069965, z: 0.5069965, w: -0.49290422}
+  m_LocalPosition: {x: 0.116483025, y: 0, z: -0.11324691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6191479115646280980}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5588010911964089134
 GameObject:
@@ -7546,7 +7558,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4821951688791307542}
-  - {fileID: 5560813641848426336}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 268.385, z: 0}
 --- !u!1 &6268163318270403916
@@ -8633,12 +8644,12 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1215275069716122762, guid: 20dc0560e4c96e7488e5466c80c543d8, type: 3}
+  m_Mesh: {fileID: 1215275069716122762, guid: 2dce5a7d46b791a48836ead23a85907f, type: 3}
 --- !u!82 &7347246474315983690
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9964,6 +9975,7 @@ SceneRoots:
   - {fileID: 928848864379294241}
   - {fileID: 1447892912}
   - {fileID: 1181353801}
+  - {fileID: 5560813641848426336}
   - {fileID: 6191479115646280980}
   - {fileID: 1522720666}
   - {fileID: 156278821}

@@ -80,6 +80,7 @@ public class JournalManager : MonoBehaviour
         {
             Debug.Log("Saving journal data...");
             AquariumManagger.Instance.SaveJournalData(journalEntries);
+            AquariumManagger.Instance.SpawnFish(fishID, reason, timeStamp);
         }
         else
         {

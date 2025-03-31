@@ -5,10 +5,11 @@ using UnityEngine;
 public class AquariumManagger : MonoBehaviour
 {
     [SerializeField] private List<FishData> fishData;
-    [SerializeField] public List<PlaceholderObject> placeHolders; 
-    private static List<string> fishes = new List<string>();
-    public  List<int> decoration = new List<int>();
+    public List<int> decoration = new List<int>();
+    public List<DecorationData> allDecorations;
     public GameObject baseFish;
+    public GameObject baseDecoration;
+    public Transform decorParent;
     private const string SaveKey = "AquariumSave";
     public static AquariumManagger Instance { get; private set; }
 
@@ -27,30 +28,12 @@ public class AquariumManagger : MonoBehaviour
         else
         {
             Instance = this;
-        }        
+        }
     }
 
     private void Start()
     {
-        LoadDecoration();
-        if (decorationsInScene.Count != placeHolders.Count)
-        {
-            LoadAquarium();
-            foreach (var placeholder in placeHolders)
-            {
-                DecorationData tempDec = null;
-                if (decorationsInScene.TryGetValue(placeholder.ID, out tempDec) && tempDec != null)
-                {
-                    placeholder.ApplyDecoration(tempDec);
-                }
-                else
-                {
-                    decorationsInScene[placeholder.ID] = null;
-
-                }
-
-            }
-        }
+        LoadDecorations();
         LoadJournalData();
 
 
@@ -104,22 +87,21 @@ public class AquariumManagger : MonoBehaviour
         }
 
         JournalManager.Instance.Initialize(journalEntries);
-         float fishCounter = 0;
+        float fishCounter = 0;
         foreach (var dailyEntry in journalEntries)
         {
             foreach (var activity in dailyEntry.Value.Values)
             {
                 foreach (var fishReward in activity.fishRewards)
 
-                    {
-                        Debug.Log("Fish ID to spawn: " + fishReward.reason);
+                {
+                    Debug.Log("Fish ID to spawn: " + fishReward.reason);
                     SpawnFish(fishReward.fishID, fishReward.dateTime, fishReward.reason);
                     fishCounter++;
                 }
 
             }
         }
-        Debug.Log("count is " + fishCounter);
         if (fishCounter < 10)
         {
             cam.orthographicSize = 3;
@@ -165,14 +147,14 @@ public class AquariumManagger : MonoBehaviour
     public static void LoadAquarium()
     {
         string json = PlayerPrefs.GetString(SaveKey);
-        Debug.Log($"Loading aquarium data: {json}");  
+        Debug.Log($"Loading aquarium data: {json}");
 
         if (!string.IsNullOrEmpty(json))
         {
             AquariumSaveData loadedData = JsonUtility.FromJson<AquariumSaveData>(json);
             if (loadedData != null)
             {
-              
+
                 if (loadedData.decorationsInSceneS != null)
                 {
                     Debug.Log("Decorations loaded: Not null");
@@ -202,13 +184,13 @@ public class AquariumManagger : MonoBehaviour
                                 else
                                 {
                                     Debug.LogWarning($"Decoration not found for name: {entry.DecorationName}");
-                                    decorationsInScene[entry.ID] = null;  
+                                    decorationsInScene[entry.ID] = null;
                                 }
                             }
                         }
                         else
                         {
-                            decorationsInScene[entry.ID] = null;  
+                            decorationsInScene[entry.ID] = null;
                             Debug.LogWarning($"DecorationName is empty or null for ID: {entry.ID}");
                         }
                     }
@@ -229,57 +211,78 @@ public class AquariumManagger : MonoBehaviour
         }
     }
 
-    public static void SaveAquarium()
+    public void SaveDecorations()
     {
         AquariumSaveData savedAquaObjects = new AquariumSaveData();
 
-        foreach ((int id, DecorationData data) in decorationsInScene)
+        foreach (var decorObj in FindObjectsOfType<Decoration>())
         {
             DecorationSaveEntry saveEntry = new DecorationSaveEntry
             {
-                ID = id,
-                DecorationName = data?.itemName // Save the itemName, or null if data is null
+                ID = decorObj.GetInstanceID(),
+                DecorationName = decorObj.data.itemName,
+                PositionX = decorObj.transform.position.x,
+                PositionY = decorObj.transform.position.y
             };
 
             savedAquaObjects.decorationsInSceneS.Add(saveEntry);
         }
 
-
         string json = JsonUtility.ToJson(savedAquaObjects, false);
-        Debug.Log(json);
-
         PlayerPrefs.SetString(SaveKey, json);
         PlayerPrefs.Save();
     }
 
-
-    public void SetDecorationForPlaceholder(int placeholderID , DecorationData selectedDecoration)
+    public void SetDecorationForPlaceholder(int placeholderID, DecorationData selectedDecoration)
     {
         decorationsInScene[placeholderID] = selectedDecoration;
     }
-
-    
-    public void LoadDecoration()
+    public void RemoveDecorationFromSave(DecorationData data, Vector2 position)
     {
-        foreach (var placeholder in placeHolders)
+        if (!PlayerPrefs.HasKey(SaveKey)) return;
+
+        string json = PlayerPrefs.GetString(SaveKey);
+        AquariumSaveData loadedData = JsonUtility.FromJson<AquariumSaveData>(json);
+
+        loadedData.decorationsInSceneS.RemoveAll(d =>
+            d.DecorationName == data.itemName && Mathf.Approximately(d.PositionX, position.x) && Mathf.Approximately(d.PositionY, position.y)
+        );
+
+        string newJson = JsonUtility.ToJson(loadedData, false);
+        PlayerPrefs.SetString(SaveKey, newJson);
+        PlayerPrefs.Save();
+        Debug.Log($"Removed {data.itemName} from saved decorations.");
+    }
+
+    public void LoadDecorations()
+    {
+        if (!PlayerPrefs.HasKey(SaveKey)) return;
+
+        string json = PlayerPrefs.GetString(SaveKey);
+        AquariumSaveData loadedData = JsonUtility.FromJson<AquariumSaveData>(json);
+
+        foreach (var entry in loadedData.decorationsInSceneS)
         {
-            if (decorationsInScene.TryGetValue(placeholder.ID, out DecorationData decoration) && decoration != null)
-            {
-                
-                placeholder.ApplyDecoration(decoration);
-            }
-            else
-            {
-               
-                placeholder.ApplyDecoration(null); 
-                Debug.LogWarning($"No decoration found for placeholder ID: {placeholder.ID}");
-            }
+            DecorationData decorationData = AllItemHolder.instance.DecorationData.Find(d => d.itemName == entry.DecorationName);
+            if (decorationData == null) continue;
+
+            // Instantiate decoration at saved position
+            GameObject decorObj = Instantiate(baseDecoration, new Vector2(entry.PositionX, entry.PositionY), Quaternion.identity, decorParent);
+            decorObj.GetComponent<Decoration>().Initialize(decorationData);
         }
     }
+
     private void OnApplicationQuit()
     {
         SaveAquarium();
     }
+
+    public  void SaveAquarium()
+    {
+       // SaveJournalData();
+        SaveDecorations();
+    }
+
 
 }
 
@@ -294,4 +297,6 @@ public class DecorationSaveEntry
 {
     public int ID;
     public string DecorationName;
+    public float PositionX;
+    public float PositionY;
 }

@@ -62,9 +62,10 @@ public class Cleaning : MonoBehaviour
         {
 
             Vector2 mousePosition = Mouse.current.position.ReadValue();
-            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-            Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+            mousePosition.x = Mathf.Clamp(mousePosition.x, 0, Screen.width);
+            mousePosition.y = Mathf.Clamp(mousePosition.y, 0, Screen.height);
 
+            Ray ray = Camera.main.ScreenPointToRay(mousePosition);
             if (Physics.Raycast(ray, out RaycastHit raycastHit))
             {
                 if (!brushAudioSource.isPlaying)

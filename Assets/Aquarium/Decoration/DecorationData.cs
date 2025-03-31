@@ -11,4 +11,5 @@ public class DecorationData : ScriptableObject
     public int cost;
     public Sprite decorSprite;
     public string itemName;
+    public int maxItemNum;
 }

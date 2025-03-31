@@ -14,7 +14,7 @@ public class PSS4Test : MonoBehaviour
     public TMP_Text warningText;
     public TMP_Text scoreText;
     public GameObject scorePanel;
-
+    public UIManager manager;
 
     public void CalculateScore()
     {
@@ -32,8 +32,7 @@ public class PSS4Test : MonoBehaviour
         }
         scorePanel.gameObject.SetActive(true);
         scoreText.text = "PSS-4 Total Score: " + score;
-
-
+        manager.StoreScore(score);
     }
 
     public void OnDone()

@@ -38,10 +38,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void SaveGame()
+    public static void SaveGame()
     {
         SavePlayerData();
-        AquariumManagger.SaveAquarium();
+        //AquariumManagger.SaveAquarium();
     }
     public static void SavePlayerData()
     {
@@ -49,18 +49,20 @@ public class GameManager : MonoBehaviour
         PlayerData playerData = new PlayerData
         {
             playerMoney = PlayerStats.GetPlayerMoney(),
-            ownedDecorationNames = PlayerStats.GetOwnedDecorations().Select(d => d.itemName).ToList()
+
+            // Convert the dictionary into lists for decoration names and counts
+            ownedDecorationNames = PlayerStats.GetOwnedDecorations().Keys.Select(d => d.itemName).ToList(),
+            ownedDecorationCounts = PlayerStats.GetOwnedDecorations().Values.ToList()
         };
 
         // Serialize PlayerData to JSON
         string json = JsonUtility.ToJson(playerData, false);
 
         // Save JSON to PlayerPrefs
-       
         PlayerPrefs.SetString("PlayerSaveData", json);
         PlayerPrefs.Save();
-        Debug.Log("Player data saved.");
-        Debug.Log(json);
+
+        Debug.Log("Player data saved: " + json);
     }
 
     public static void LoadPlayerData()

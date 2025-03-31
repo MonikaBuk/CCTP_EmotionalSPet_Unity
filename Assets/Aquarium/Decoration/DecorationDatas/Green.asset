@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d57447433525af4394a847b0354d9ab, type: 3}
-  m_Name: YellowSpikes
+  m_Name: Green
   m_EditorClassIdentifier: 
   placeID: 3
   cost: 5
-  decorSprite: {fileID: -1782515383, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
-  itemName: Cave
+  decorSprite: {fileID: -1139006813, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
+  itemName: Plant
+  maxItemNum: 5
