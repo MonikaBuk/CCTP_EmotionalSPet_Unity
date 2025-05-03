@@ -44,6 +44,7 @@ public class BowlController : MonoBehaviour
                     score = 0;
                     PetStats.wasFed = true;
                     PlayerStats.AddMoney(5);
+                    TreatsUI.num = 5;
                     SceneManager.LoadScene("PetScene");
                 }
             }

@@ -16,3 +16,5 @@ MonoBehaviour:
   cost: 10
   decorSprite: {fileID: -180671382, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
   itemName: Pink Coral
+  maxItemNum: 5
+  scaleMultiplier: 1

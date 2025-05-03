@@ -24,6 +24,7 @@ public class Obstacles : MonoBehaviour
         {
             PetStats.wasPlayed = true;
             PlayerStats.AddMoney(5);
+            TreatsUI.num = 5;
             SceneManager.LoadScene("PetScene");
         }
     }

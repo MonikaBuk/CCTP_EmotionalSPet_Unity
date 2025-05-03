@@ -188,7 +188,7 @@ public class UIManager : MonoBehaviour
 
     public void StoreScore(int score)
     {
-        pastScores.Add(new ScoreEntry(score)); // Store with date
+        pastScores.Add(new ScoreEntry(score));
         Debug.Log("Score stored: " + score);
         PlayerPrefs.SetString("LastQuestionnaireDate", DateTime.UtcNow.ToString("yyyy-MM-dd"));
         PlayerPrefs.Save();

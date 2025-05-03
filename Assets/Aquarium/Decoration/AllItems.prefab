@@ -45,9 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DecorationData:
+  - {fileID: 11400000, guid: 6bc005d141f52044b8677839a0c681ab, type: 2}
   - {fileID: 11400000, guid: 5061cbec2cc974749a747e1a8d93fe31, type: 2}
-  - {fileID: 11400000, guid: 51be97f1402a4f14bb13a3250208d1be, type: 2}
-  - {fileID: 11400000, guid: 0f290f841808dd34d8a5ed36b45ab9dc, type: 2}
-  - {fileID: 11400000, guid: 9d2cc0f1d13fb504d8a954d8dae87c3c, type: 2}
   - {fileID: 11400000, guid: c996665974e876a4380f6d3bc1a8dd6b, type: 2}
   - {fileID: 11400000, guid: 099c2a5f940a618499840b525c17d093, type: 2}
+  - {fileID: 11400000, guid: 51be97f1402a4f14bb13a3250208d1be, type: 2}
+  - {fileID: 11400000, guid: 4c6f3fcbf113e2e448cda35a7833818f, type: 2}
+  - {fileID: 11400000, guid: c8f95167c217e9547ae9bf96247befc3, type: 2}
+  - {fileID: 11400000, guid: 9d2cc0f1d13fb504d8a954d8dae87c3c, type: 2}
+  - {fileID: 11400000, guid: 0f290f841808dd34d8a5ed36b45ab9dc, type: 2}
+  - {fileID: 11400000, guid: 5e995fbca3f65e347aed074b50678ce5, type: 2}

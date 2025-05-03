@@ -55,7 +55,7 @@ public class Cleaning : MonoBehaviour
 
     void Update()
     {
-        int brushSize = 100; // Increase this for a bigger brush
+        int brushSize = 100; 
         float scaleFactor = brushSize / (float)dirtBrush.width;
 
         if (Mouse.current.leftButton.isPressed)
@@ -165,6 +165,7 @@ public class Cleaning : MonoBehaviour
                 uiText.text = "Well done";
                 material.SetFloat("_Dirtiness", 0);
                 PetStats.wasCleaned = true;
+                TreatsUI.num = 5;
                 PlayerStats.AddMoney(5);
                 ChangeBackCursor();
                 SceneManager.LoadScene("PetScene");

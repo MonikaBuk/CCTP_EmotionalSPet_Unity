@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d57447433525af4394a847b0354d9ab, type: 3}
-  m_Name: BlueCoral
+  m_Name: Arch
   m_EditorClassIdentifier: 
-  placeID: 1
-  cost: 5
-  decorSprite: {fileID: -1783022957, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
-  itemName: Blue Coral
-  maxItemNum: 5
-  scaleMultiplier: 1
+  placeID: 0
+  cost: 20
+  decorSprite: {fileID: -1273593714, guid: 241277f31c60e914c9921cbe1b42d0ec, type: 3}
+  itemName: Arch
+  maxItemNum: 1
+  scaleMultiplier: 2

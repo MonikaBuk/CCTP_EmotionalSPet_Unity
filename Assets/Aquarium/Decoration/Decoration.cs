@@ -25,6 +25,7 @@ public class Decoration : MonoBehaviour
     {
         data = decorationData;
         GetComponent<SpriteRenderer>().sprite = data.decorSprite;
+        transform.localScale = Vector3.one * data.scaleMultiplier;
         originalPosition = transform.position;
     }
 
@@ -103,7 +104,10 @@ public class Decoration : MonoBehaviour
 
     private void OnDestroy()
     {
-        ownButton.RefreshIcon();
+        if (ownButton != null)
+        {
+            ownButton.RefreshIcon();
+        }
     }
 }
 

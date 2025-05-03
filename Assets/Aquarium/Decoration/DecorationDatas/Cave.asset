@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Cave
   m_EditorClassIdentifier: 
   placeID: 3
-  cost: 5
+  cost: 20
   decorSprite: {fileID: -1782515383, guid: 3fe415bbe5d0524459d5de45adff2fe7, type: 3}
   itemName: Cave
   maxItemNum: 1
+  scaleMultiplier: 2

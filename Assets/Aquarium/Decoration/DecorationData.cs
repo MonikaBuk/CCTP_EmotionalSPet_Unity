@@ -12,4 +12,5 @@ public class DecorationData : ScriptableObject
     public Sprite decorSprite;
     public string itemName;
     public int maxItemNum;
+    public float scaleMultiplier;
 }

@@ -37,7 +37,6 @@ public class ScoreGraph : MonoBehaviour
         float maxScore = pastScores.Max();
         for (int i = 0; i < pastScores.Count; i++)
         {
-            // Create Bar
             GameObject bar = Instantiate(barPrefab, graphContainer);
             GameObject dateLabelObj = new GameObject("DateLabel");
             dateLabelObj.transform.SetParent(bar.transform);

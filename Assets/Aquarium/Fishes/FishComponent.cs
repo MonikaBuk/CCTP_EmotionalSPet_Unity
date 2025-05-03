@@ -9,10 +9,12 @@ public class FishComponent : MonoBehaviour
     public string acvhievedDate;
     public string entry;
     private AchievementTextManager achievementTextManager;
+    private AudioSource audioSource;
 
     private void Start()
     {
         achievementTextManager = FindObjectOfType<AchievementTextManager>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Initialize(int id, string date, string txtInput)
@@ -41,6 +43,7 @@ public class FishComponent : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
+            audioSource.Play();
             achievementTextManager.ActivateText(entry + " " + acvhievedDate + ".");
         }
     }
