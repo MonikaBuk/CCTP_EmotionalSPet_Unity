@@ -37,3 +37,18 @@ A cozy Unity-based wellness app where users take care of an emotional support pe
 > Add screenshots of the pet, aquarium, fish spawning, shop UI, or mini-games here.
 
 
+
+---
+## 🚀 Demo
+
+[![Watch the demo](https://img.youtube.com/vi/JMRB0f6fvBk/0.jpg)](https://youtu.be/JMRB0f6fvBk)
+
+## 🎮 Installation & Running
+
+> To run this project locally:
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/emotional-support-pet.git
+
+
