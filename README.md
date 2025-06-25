@@ -47,18 +47,21 @@ A cozy Unity-based wellness app where users take care of an emotional support pe
 
 > To run this project locally:
 
+## 📦 Installation
+
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/emotional-support-pet.git
----
+
+
 
 ## ▶️ How to Run
 
 1. Open the scene: `MainScene` (or your main scene name) in **Unity Hub**.
 2. Press the **Play** button in the Unity Editor to test it.
-3. *(Optional)* To create a build, go to `File > Build Settings` and select your target platform.
-
----
+3. *(Optional)* To create a build, go to `File > Build Settings` and select your target platform
+```
 
 ## 🎯 Gameplay Overview
 
