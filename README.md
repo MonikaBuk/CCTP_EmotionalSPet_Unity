@@ -1,49 +1,39 @@
-# 📝 Project Title
+# 🐾 Emotional Support Pet
 
-Short description of your project (1–2 lines) — what it does and why it exists.
+A cozy Unity-based wellness app where users take care of an emotional support pet, complete breathing and journaling exercises, and grow a beautiful aquarium as a reflection of their progress.
 
 ---
 
-## 🚀 Demo
+## 🌟 Features
 
-If applicable, add a link to a **live demo** or deployed version:
+- 🐟 **Achievement Aquarium**  
+  Each journaling or breathing exercise unlocks a unique fish that spawns and grows in the user’s aquarium.
 
-> 🌐 [Live Demo](https://your-demo-link.com)
+- 🧠 **Emotional Wellness Activities**  
+  Includes breathing exercises and journaling prompts to promote mindfulness and self-reflection.
+
+- 🛒 **Decorative Shop System**  
+  Users can earn in-game currency through mini-games and purchase decorations for their aquarium.
+
+- 🎮 **Pet Care Mini-games**  
+  Interactive mini-games like feeding and playing with your pet to keep it happy and healthy.
+
+- 💾 **Progress Saving**  
+  User data is saved using Unity’s `PlayerPrefs` system for persistent tracking of activities, unlocked fish, and aquarium setup.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Game Engine:** Unity
+- **Language:** C#
+- **Saving System:** Unity `PlayerPrefs`
+- **Tools & Systems:** Custom Achievement System, Aquarium Decorator, Mini-game Logic
 
 ---
 
 ## 📸 Screenshots
 
-If your project has a UI, include screenshots here.
+> Add screenshots of the pet, aquarium, fish spawning, shop UI, or mini-games here.
 
 
----
-
-## 🛠️ Features
-
-- ✅ Feature 1
-- ✅ Feature 2
-- ✅ Feature 3 (if applicable)
-
----
-
-## 🧰 Tech Stack
-
-List the major tech/tools used:
-
-- **Frontend:** React / HTML / CSS / Tailwind / etc.
-- **Backend:** Node.js / Express / Django / etc.
-- **Database:** MongoDB / PostgreSQL / Firebase / etc.
-- **Other:** APIs, Libraries, etc.
-
----
-
-## 📦 Installation
-
-Clone the repo and install dependencies:
-
-```bash
-git clone https://github.com/yourusername/project-name.git
-cd project-name
-npm install
-npm start
