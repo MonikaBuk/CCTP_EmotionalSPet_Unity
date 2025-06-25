@@ -81,11 +81,6 @@ git clone https://github.com/yourusername/emotional-support-pet.git
 
 ---
 
-## 🙋‍♀️ Author
-
-**Your Name** – [@yourhandle](https://github.com/yourhandle)
-
----
 
 ## 📄 License
 
